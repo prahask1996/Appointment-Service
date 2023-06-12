@@ -16,7 +16,7 @@ variables:
   containerRegistry: 'email14.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: |
-      latest
+      latest,
       '$(Build.BuildId)'
 
   # Agent VM image name
