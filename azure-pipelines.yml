@@ -15,8 +15,9 @@ variables:
   imageRepository: 'prahaskappointmentservice'
   containerRegistry: 'email14.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: latest
-      $(Build.BuildId)
+  tag: |
+      '$(latest)'
+      '$(Build.BuildId)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
