@@ -31,4 +31,4 @@ spring:
 #  url: https://departmentservice.dev.skillassure.com/department
 
 swagger:       
-    url:  http://20.232.239.207:8091/appointment  
+    url:  http://20.204.217.160:8091/appointment  
