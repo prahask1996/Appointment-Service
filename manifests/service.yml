@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: prahaskappointmentservice
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8091 
+    selector:
+        app: prahaskappointmentservice
