@@ -1,0 +1,39 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: prahaskappointmentservice 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prahaskappointmentservice
+  template:
+    metadata:
+      labels:
+        app: prahaskappointmentservice 
+    spec:
+      containers:
+        - name: prahaskappointmentservice 
+          image: email14.azurecr.io/prahaskappointmentservice
+          ports:
+          - containerPort: 8091
+      imagePullSecrets:
+        - name: myscretService
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: prahaskappointmentservice
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8091 
+    selector:
+        app: prahaskappointmentservice
+
+#create a secret to pull the image from private reg
+#kubectl create secret docker-registry myregistrykey 
+#    --docker-server=https://myregistry.azurecr.io 
+#    --docker-username=ACR_USERNAME 
+#    --docker-password=ACR_PASSWORD 
+    --docker-email=ANY_EMAIL_ADDRESS
